@@ -38,12 +38,12 @@ class stack{
 		}
 		
 		void pop(){
-				node* temp=top;
+				
 			if(top == NULL){
 				cout<<"stack is under flow"<<endl;
 				return;
 			}
-		
+		        node* temp=top;
 			top=top->next;
 			delete temp;
 			size--;
