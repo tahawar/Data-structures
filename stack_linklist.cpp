@@ -8,16 +8,22 @@ struct node{
 
 class stack{
 	
-	public:
+	private:
 		node* top;
 		int size;
-		
+		public:
 		stack(){
 			top=NULL;
 			size=0;
 		}
 		
-		void push(int val){
+		void push(int val);
+		
+		void pop();
+		
+		void display();
+};
+	void stack:: push(int val){
 			
 			
 			if(top == NULL){
@@ -37,20 +43,20 @@ class stack{
 			size++;
 		}
 		
-		void pop(){
-				
+		void stack:: pop(){
+				node* temp=top;
 			if(top == NULL){
 				cout<<"stack is under flow"<<endl;
 				return;
 			}
-		        node* temp=top;
+		
 			top=top->next;
 			delete temp;
 			size--;
 			cout<<"after one pop  "<<endl;
 		}
 		
-		void display(){
+		void stack:: display(){
 				node* temp=top;
 				cout<<"value in stack is    ";
 				while(temp != NULL){
@@ -60,7 +66,6 @@ class stack{
 			cout<<endl<<"size of stack is   "<<size;
 			cout<<endl;
 		}
-};
 
 int main(){
 	
@@ -81,6 +86,8 @@ int main(){
 	s.pop();
 	s.pop();
 	s.pop();
+	s.pop();
+	
 	s.display();
 		
 	
@@ -88,16 +95,6 @@ int main(){
 	
 	system("pause");
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
